@@ -1,8 +1,12 @@
 dist: focal
+arch: 
+   - amd64
+   - arm64
 
 jobs:
    -stage: build
    script: 
+     - export VSCODE_GOLANG_CPU_ARCH=${TRAVIS_CPU_ARCH}
      - echo "${DOCKERHUB_PASSWORD}" | docker login -u ${DOCKERHUB_USER} --password-stdin docker.io
      - chmod +x ./build.sh
      - ./build.sh 1.${TRAVIS_BUILD_NUMBER}
