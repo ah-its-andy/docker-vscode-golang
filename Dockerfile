@@ -14,7 +14,7 @@ ADD daemon.sh /usr/bin/daemon.sh
 RUN wget -O /etc/golang/golang.tar.gz $GO_BIN_URL \
 && tar -xzf /etc/golang/golang.tar.gz -C /etc/golang \
 && rm /etc/golang/golang.tar.gz \
-&& ln -s /etc/golang/go/bin/go /usr/bin/go
+&& ln -s /etc/golang/go/bin/go /usr/bin/go \
 && chmod +x /usr/bin/daemon.sh
 
 RUN /usr/bin/go env -w GOPROXY=$GO_PROXY \
