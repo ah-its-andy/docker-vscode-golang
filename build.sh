@@ -10,6 +10,7 @@ do
       echo "=============================================================================="
       docker build ./ --build-arg GO_BIN_URL=https://golang.google.cn/dl/${GO_VERSIONS[i]}.linux-${ARCHS[a]}.tar.gz -t standardcore/vscode-golang:${GO_VERSIONS[i]}-${ARCHS[a]}-$1
       docker push standardcore/vscode-golang:${GO_VERSIONS[i]}-${ARCHS[a]}-$1
+      docker image rm standardcore/vscode-golang:${GO_VERSIONS[i]}-${ARCHS[a]}-$1
    done
 done
 
