@@ -5,10 +5,9 @@ os: linux
 jobs:
    -stage: build
    arch:   
-      - arm64
       - amd64
-   script: 
-     - export VSCODE_GOLANG_CPU_ARCH=${TRAVIS_CPU_ARCH}
-     - echo "${DOCKERHUB_PASSWORD}" | docker login -u ${DOCKERHUB_USER} --password-stdin docker.io
-     - chmod +x ./build.sh
-     - ./build.sh 1.${TRAVIS_BUILD_NUMBER}
+      script: 
+        - export VSCODE_GOLANG_CPU_ARCH=${TRAVIS_CPU_ARCH}
+        - echo "${DOCKERHUB_PASSWORD}" | docker login -u ${DOCKERHUB_USER} --password-stdin docker.io
+        - chmod +x ./build.sh
+        - ./build.sh 1.${TRAVIS_BUILD_NUMBER}
