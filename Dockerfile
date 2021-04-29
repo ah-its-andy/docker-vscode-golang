@@ -11,7 +11,8 @@ RUN apt-get update > /dev/null\
 
 ADD daemon.sh /usr/bin/daemon.sh
 
-RUN wget -O golang.tar.gz $GO_BIN_URL \
+RUN wget -q -O golang.tar.gz $GO_BIN_URL \
+&& mkdir /etc/golang \
 && tar -xzf golang.tar.gz -C /etc/golang \
 && rm golang.tar.gz \
 && ln -s /etc/golang/go/bin/go /usr/bin/go \
