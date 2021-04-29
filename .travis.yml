@@ -1,7 +1,9 @@
-dist: focal
-arch: 
-   - amd64
+language: c
+
+arch:   
    - arm64
+
+os: linux
 
 jobs:
    -stage: build
