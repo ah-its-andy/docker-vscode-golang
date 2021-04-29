@@ -1,5 +1,3 @@
-language: c
-
 arch:   
    - arm64
    - amd64
