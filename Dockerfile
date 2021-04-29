@@ -10,7 +10,7 @@ RUN tar -xzf /etc/golang/golang.tar.gz -C /etc/golang \
 && ln -s /etc/golang/go/bin/go /usr/bin/go
 
 RUN apt-get update > /dev/null\
-&& apt-get install -y -q git\
+&& apt-get install -y -q git > /dev/null \
 && apt-get clean \
 && apt-get autoclean \
 && apt-get autoremove
