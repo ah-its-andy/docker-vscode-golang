@@ -3,6 +3,6 @@ dist: focal
 jobs:
    -stage: build
    script: 
-     - echo "${DOCKERHUB_PASSWORD}" | docker login -u standardcore --password-stdin docker.io
+     - echo "${DOCKERHUB_PASSWORD}" | docker login -u ${DOCKERHUB_USER} --password-stdin docker.io
      - chmod +x ./build.sh
      - ./build.sh 1.${TRAVIS_BUILD_NUMBER}
