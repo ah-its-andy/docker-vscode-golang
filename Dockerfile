@@ -24,4 +24,9 @@ RUN /usr/bin/go env -w GOPROXY=$GO_PROXY \
 && /usr/bin/go get -v github.com/haya14busa/goplay/cmd/goplay \
 && /usr/bin/go get -v github.com/go-delve/delve/cmd/dlv
 
-
+RUN echo "#! /usr/bin/bash" > /etc/golang/daemon.sh \
+&& echo "for((;;))" > /etc/golang/daemon.sh \
+&& echo "do" > /etc/golang/daemon.sh \
+&& echo "      sleep 1000000" > /etc/golang/daemon.sh \
+&& echo "done" > /etc/golang/daemon.sh \
+&& chmod +x /etc/golang/daemon.sh
