@@ -1,3 +1,5 @@
+![](https://travis-ci.com/standardcore/docker-vscode-golang.svg)
+
 # docker-vscode-golang
 Golang development environment for Visual Studio Code Remote in Container
 
