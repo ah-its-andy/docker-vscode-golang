@@ -20,14 +20,13 @@ RUN wget -q -O golang.tar.gz $GO_BIN_URL \
 && rm golang.tar.gz \
 && ln -s /etc/golang/go/bin/go /usr/bin/go \
 && chmod +x /usr/bin/daemon.sh \
-&& rm /root/.gitconfig
 
-RUN /usr/bin/go env -w GOPROXY=$GO_PROXY \
-&& /usr/bin/go get -v github.com/uudashr/gopkgs/v2/cmd/gopkgs \
-&& /usr/bin/go get -v github.com/ramya-rao-a/go-outline \
-&& /usr/bin/go get -v github.com/cweill/gotests/gotests \
-&& /usr/bin/go get -v github.com/fatih/gomodifytags \
-&& /usr/bin/go get -v github.com/josharian/impl \
-&& /usr/bin/go get -v github.com/haya14busa/goplay/cmd/goplay \
-&& /usr/bin/go get -v github.com/go-delve/delve/cmd/dlv \
-&& /usr/bin/go get -v golang.org/x/tools/gopls
+# RUN /usr/bin/go env -w GOPROXY=$GO_PROXY \
+# && /usr/bin/go get -v github.com/uudashr/gopkgs/v2/cmd/gopkgs \
+# && /usr/bin/go get -v github.com/ramya-rao-a/go-outline \
+# && /usr/bin/go get -v github.com/cweill/gotests/gotests \
+# && /usr/bin/go get -v github.com/fatih/gomodifytags \
+# && /usr/bin/go get -v github.com/josharian/impl \
+# && /usr/bin/go get -v github.com/haya14busa/goplay/cmd/goplay \
+# && /usr/bin/go get -v github.com/go-delve/delve/cmd/dlv \
+# && /usr/bin/go get -v golang.org/x/tools/gopls
