@@ -15,10 +15,10 @@ RUN apt-get update > /dev/null\
 ADD daemon.sh /usr/bin/daemon.sh
 
 RUN wget -q -O golang.tar.gz $GO_BIN_URL \
-&& mkdir /etc/golang \
-&& tar -xzf golang.tar.gz -C /etc/golang \
+&& mkdir -p /usr/local/ \
+&& tar -xzf golang.tar.gz -C /usr/local/ \
 && rm golang.tar.gz \
-&& ln -s /etc/golang/go/bin/go /usr/bin/go \
+&& ln -s /usr/local//go/bin/go /usr/bin/go \
 && chmod +x /usr/bin/daemon.sh \
 
 # RUN /usr/bin/go env -w GOPROXY=$GO_PROXY \
